@@ -1,0 +1,65 @@
+### Créer un utilisateur
+POST http://localhost:8080/users
+Content-Type: application/json
+
+{
+  "username": "john_doe"
+}
+
+### Créer un autre utilisateur
+POST http://localhost:8080/users
+Content-Type: application/json
+
+{
+  "username": "jane_smith"
+}
+
+### Afficher un utilisateur
+GET http://localhost:8080/users/1
+
+### Créer un projet
+POST http://localhost:8080/projects
+Content-Type: application/json
+
+{
+  "name": "Projet Web",
+  "creatorId": 1
+}
+
+### Afficher un projet avec ses détails
+GET http://localhost:8080/projects/1
+
+### Créer une tâche
+POST http://localhost:8080/tasks
+Content-Type: application/json
+
+{
+  "title": "Développer l'interface utilisateur",
+  "projectId": 1,
+  "assigneeId": 2
+}
+
+### Modifier le statut d'une tâche
+PATCH http://localhost:8080/tasks/1
+Content-Type: application/json
+
+{
+  "status": "IN_PROGRESS"
+}
+
+### Lister les tâches d'un projet
+GET http://localhost:8080/projects/1/tasks
+
+### Afficher les projets créés par un utilisateur
+GET http://localhost:8080/users/1/projects
+
+### Afficher les tâches assignées à un utilisateur
+GET http://localhost:8080/users/2/tasks
+
+### Changer le statut d'une tâche à DONE
+PATCH http://localhost:8080/tasks/1
+Content-Type: application/json
+
+{
+  "status": "DONE"
+}
